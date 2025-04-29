@@ -1,0 +1,50 @@
+import time
+import subprocess
+import video_extractor
+import frame_extractor
+import frame_loader
+import frame_render
+import simpleaudio as sa
+from pydub import AudioSegment
+
+BAD_APPLE_URL = "https://www.youtube.com/watch?v=FtutLA63Cp8"
+
+frame_dir = "./frames/"
+
+audio_path = "bad_apple_audio.wav"
+
+print("Video extracting")
+
+# video_extractor.extract_video(BAD_APPLE_URL)
+
+# frame_extractor.extract_frames()
+#
+frames = frame_loader.load_frames(frame_dir)
+
+# for frame in frames:
+#     frame_render.render_frame(frame)
+
+def sync_frames_with_audio(frames, audio_path):
+    audio = AudioSegment.from_file(audio_path)
+    audio_length = len(audio) / 1000
+
+    wave_obj = sa.WaveObject.from_wave_file(audio_path)
+    play_obj = wave_obj.play()
+
+    frame_count = len(frames)
+    frame_duration = audio_length / frame_count
+
+    start_time = time.time()
+    for i, frame in enumerate(frames):
+        target_time = start_time + i * frame_duration 
+        now = time.time()
+
+        time_to_sleep = target_time - now
+        if time_to_sleep > 0:
+            time.sleep(time_to_sleep)
+
+        frame_render.render_frame(frame)
+
+    play_obj.wait_done()
+
+sync_frames_with_audio(frames, audio_path)
