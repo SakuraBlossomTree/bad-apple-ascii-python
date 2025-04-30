@@ -1,4 +1,6 @@
-/frames
+frames/
+
+__pycache__/
 
 bad_apple_audio.wav
 
