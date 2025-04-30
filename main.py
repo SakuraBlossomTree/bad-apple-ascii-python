@@ -18,6 +18,8 @@ print("Video extracting")
 
 # video_extractor.extract_video(BAD_APPLE_URL)
 
+frame_extractor.extract_audio()
+
 if (len([f for f in os.listdir(frame_dir) if os.path.isfile(os.path.join(frame_dir, f))]) < 0):
     frame_extractor.extract_frames()
 #
