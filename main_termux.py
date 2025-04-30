@@ -39,7 +39,7 @@ def sync_frames_with_audio(frames, audio_path):
         audio_length = frames_in_audio / framerate
 
     # Start ffplay in background
-    subprocess.Popen(['noplay', audio_path],
+    subprocess.Popen(['play', audio_path],
                      stdout=subprocess.DEVNULL,
                      stderr=subprocess.DEVNULL)
 
