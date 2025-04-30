@@ -14,8 +14,6 @@ frame_dir = "./frames/"
 
 audio_path = "bad_apple_audio.wav"
 
-frames = []
-
 print("Video extracting")
 
 video_extractor.extract_video(BAD_APPLE_URL)
