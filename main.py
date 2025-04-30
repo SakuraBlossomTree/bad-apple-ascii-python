@@ -14,13 +14,15 @@ frame_dir = "./frames/"
 
 audio_path = "bad_apple_audio.wav"
 
+frames = []
+
 print("Video extracting")
 
-# video_extractor.extract_video(BAD_APPLE_URL)
+video_extractor.extract_video(BAD_APPLE_URL)
 
 frame_extractor.extract_audio()
 
-if (len([f for f in os.listdir(frame_dir) if os.path.isfile(os.path.join(frame_dir, f))]) < 0):
+if not any(f.endswith(".png") for f in os.listdir(frame_dir)):
     frame_extractor.extract_frames()
 #
 frames = frame_loader.load_frames(frame_dir)
