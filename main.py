@@ -1,4 +1,5 @@
 import time
+import os
 import subprocess
 import video_extractor
 import frame_extractor
@@ -17,7 +18,8 @@ print("Video extracting")
 
 # video_extractor.extract_video(BAD_APPLE_URL)
 
-# frame_extractor.extract_frames()
+if (len([f for f in os.listdir(frame_dir) if os.path.isfile(os.path.join(frame_dir, f))]) < 0):
+    frame_extractor.extract_frames()
 #
 frames = frame_loader.load_frames(frame_dir)
 
