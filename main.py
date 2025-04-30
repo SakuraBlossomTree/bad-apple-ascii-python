@@ -4,6 +4,7 @@ import subprocess
 import video_extractor
 import frame_extractor
 import frame_loader
+import frame_loader_60_fps
 import frame_render
 import simpleaudio as sa
 from pydub import AudioSegment
