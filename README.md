@@ -47,7 +47,6 @@ python main.py
 
 ```text id="n1d8qu"
 bad-apple-ascii-python/
-├── assets/
 ├── frames/
 ├── main.py
 ├── requirements.txt
