@@ -14,7 +14,7 @@ This project was created to experiment with ASCII rendering, video processing, a
 
 ## Preview
 
-A GIF or screenshot of the animation will be added in a future update.
+![gif bad apple](./bad-apple.gif)
 
 ## Installation
 
