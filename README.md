@@ -40,7 +40,7 @@ python main.py
 ## Built With
 
 * Python
-* OpenCV (for video processing)
+* BeautifulSoup
 * Terminal ASCII rendering
 
 ## Project Structure
